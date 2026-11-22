@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Finwhyte — Markets, Charts & News</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="ticker-tape">
+  <div class="ticker-tape__track" id="tickerTrack">
+    <span class="ticker-tape__item muted">Loading tape…</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html"><span>SMYTHE</span><span class="brand__accent">WHYTE</span></a>
+    <nav class="site-nav">
+      <a href="index.html" class="active">Markets</a>
+      <a href="index.html#watchlist">Watchlist</a>
+      <a href="index.html#news">News</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="headerSearch" class="search-input" type="text" placeholder="Search ticker or company (e.g. AAPL, Tesla)" autocomplete="off" />
+      <div id="headerSearchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="configBanner"></div>
+
+  <section>
+    <div class="market-strip" id="marketStrip">
+      <div class="state-msg">Loading market data…</div>
+    </div>
+  </section>
+
+  <div class="grid">
+    <div>
+      <div class="panel" id="watchlist">
+        <div class="panel__header">
+          <span class="panel__title">Watchlist</span>
+        </div>
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Symbol</th>
+              <th class="num">Price</th>
+              <th class="num">Chg %</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="watchlistBody">
+            <tr><td colspan="4" class="state-msg">Loading watchlist…</td></tr>
+          </tbody>
+        </table>
+        <div class="add-symbol-row">
+          <input id="addSymbolInput" type="text" placeholder="Add symbol, e.g. NFLX" autocomplete="off" />
+          <button id="addSymbolBtn">Add</button>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="panel" id="news">
+        <div class="panel__header">
+          <span class="panel__title">Market News</span>
+          <div class="news-controls">
+            <select id="newsSortSelect" class="news-sort-select">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="source">Group by source</option>
+            </select>
+          </div>
+        </div>
+        <div class="range-tabs news-category-tabs" id="newsCategoryTabs">
+          <button data-category="general" class="active">General</button>
+          <button data-category="forex">Forex</button>
+          <button data-category="crypto">Crypto</button>
+          <button data-category="merger">M&amp;A</button>
+        </div>
+        <div class="news-list" id="newsList">
+          <div class="state-msg">Loading news…</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Finwhyte — market data via Finnhub &amp; Twelve Data. Prices may be delayed. Not investment advice.
+</footer>
+
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

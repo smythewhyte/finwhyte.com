@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Stock — Finwhyte</title>
+<link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+
+<div class="ticker-tape">
+  <div class="ticker-tape__track" id="tickerTrack">
+    <span class="ticker-tape__item muted">Loading tape…</span>
+  </div>
+</div>
+
+<header class="site-header">
+  <div class="site-header__inner">
+    <a class="brand" href="index.html"><span>SMYTHE</span><span class="brand__accent">WHYTE</span></a>
+    <nav class="site-nav">
+      <a href="index.html">Markets</a>
+      <a href="index.html#watchlist">Watchlist</a>
+      <a href="index.html#news">News</a>
+    </nav>
+    <div class="search-wrap">
+      <input id="headerSearch" class="search-input" type="text" placeholder="Search ticker or company" autocomplete="off" />
+      <div id="headerSearchResults" class="search-results"></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <div id="configBanner"></div>
+
+  <div class="stock-header">
+    <div>
+      <div class="stock-header__name" id="companyName">—</div>
+      <div class="stock-header__symbol" id="symbolLabel">—</div>
+    </div>
+    <div class="stock-header__price">
+      <span class="price num" id="priceValue">—</span>
+      <span class="delta num" id="priceDelta">—</span>
+    </div>
+    <button id="watchlistToggle" class="range-tabs" style="padding:6px 12px; border:1px solid var(--border); border-radius:4px; background:none; color:var(--text-muted); cursor:pointer; font-family:var(--font-mono); font-size:12px;">+ Watchlist</button>
+  </div>
+
+  <div class="panel">
+    <div class="panel__header">
+      <span class="panel__title">Price Chart</span>
+      <div class="range-tabs" id="rangeTabs"></div>
+    </div>
+    <div class="chart-wrap">
+      <canvas id="priceChart"></canvas>
+    </div>
+  </div>
+
+  <div class="grid section-gap">
+    <div class="panel">
+      <div class="panel__header"><span class="panel__title">Key Stats</span></div>
+      <div class="panel__body">
+        <div class="stats-grid" id="statsGrid">
+          <div class="state-msg">Loading…</div>
+        </div>
+      </div>
+    </div>
+    <div class="panel">
+      <div class="panel__header"><span class="panel__title">Company News</span></div>
+      <div class="news-list" id="companyNewsList">
+        <div class="state-msg">Loading news…</div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer class="site-footer">
+  Finwhyte — market data via Finnhub &amp; Twelve Data. Prices may be delayed. Not investment advice.
+</footer>
+
+<script src="js/vendor/chart.umd.min.js"></script>
+<script src="js/config.js"></script>
+<script src="js/api.js"></script>
+<script src="js/common.js"></script>
+<script src="js/stock.js"></script>
+</body>
+</html>
