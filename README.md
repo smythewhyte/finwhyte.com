@@ -20,7 +20,7 @@ Open `index.html` in a browser and it works (once you add two free API keys).
 4. Open `index.html` directly in a browser, **or** serve it locally (recommended, avoids
    any browser file:// quirks):
    ```bash
-   cd smythehyte
+   cd finhyte
    python3 -m http.server 8080
    # visit http://localhost:8080
    ```
